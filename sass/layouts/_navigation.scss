@@ -1,0 +1,115 @@
+.sidebar {
+  background-color: $greyDark1;
+  flex: 0 0 18%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.side-nav {
+  margin-top: 3.5rem;
+  font-size: 1.4rem;
+  list-style: none;
+
+  @include respond(tab-port) {
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &__item {
+    position: relative;
+
+    @include respond(tab-port) {
+      flex: 1;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: .5rem;
+
+      @include respond(tab-port) {
+        margin: 0;
+      }
+    }
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 3px;
+      height: 100%;
+      background-color: $pri;
+      transform: scaleY(0);
+      transition: transform 250ms ease,
+        width 350ms cubic-bezier(1, 0, 0, 1) 250ms,
+        background-color 100ms;
+    }
+
+    &:hover::before,
+    &--active::before {
+      transform: scaleY(1);
+      width: 100%;
+    }
+
+    &:active::before {
+      background-color: $priLight;
+    }
+  }
+
+  &__link:link,
+  &__link:visited {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $greyLight1;
+    display: block;
+    padding: 1.5rem 3rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+
+    @include respond(tab-port) {
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    @include respond(phone) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 1.2rem;
+    }
+
+    @include respond(sm-phone) {
+      text-align: center;
+    }
+  }
+
+  &__icon {
+    width: 1.75rem;
+    height: 1.75rem;
+    margin-right: 2rem;
+    fill: currentColor;
+
+    @include respond(phone) {
+      margin-right: 0;
+      margin-bottom: .7rem;
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+}
+
+.footer {
+  text-align: center;
+  color: greyDark1;
+  font-size: 1.2rem;
+  padding: 2.5rem;
+
+  @include respond(tab-port) {
+    display: none;
+  }
+}

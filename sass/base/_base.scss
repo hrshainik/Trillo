@@ -1,0 +1,26 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+::selection {
+  color: $white;
+  background-color: $pri;
+}
+
+html {
+  font-size: 62.5%; //1rem = 10px;
+
+  @include respond(tab-port) {
+    font-size: 50%;
+  }
+}
+
+body {
+  box-sizing: border-box;
+  background-image: linear-gradient(to right bottom, $priLight, $priDark);
+  background-repeat: no-repeat;
+}

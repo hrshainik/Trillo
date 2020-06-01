@@ -1,0 +1,113 @@
+.details {
+  display: flex;
+  padding: 4.5rem;
+  background-color: $greyLight1;
+  border-bottom: 1px solid $greyLight1;
+  font-size: 1.4rem;
+
+  @include respond(tab-port) {
+    padding: 3rem;
+  }
+
+  @include respond(phone) {
+    flex-direction: column;
+  }
+}
+
+.description {
+  font-size: 1.4rem;
+  background-color: $white;
+  flex: 0 0 60%;
+  box-shadow: $shadowLight1;
+  padding: 3rem;
+  margin-right: 4.5rem;
+
+  @include respond(tab-port) {
+    padding: 2.5rem;
+    margin-right: 3rem;
+  }
+
+  @include respond(phone) {
+    margin-right: 0;
+  }
+}
+
+.user-reviews {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.paragraph:not(:last-of-type) {
+  margin-bottom: 2rem;
+}
+
+.list {
+  list-style: none;
+  margin: 3rem 0;
+  padding: 3rem 0;
+  border-top: 1px solid $greyLight2;
+  border-bottom: 1px solid $greyLight2;
+  display: flex;
+  flex-wrap: wrap;
+
+  @include respond(tab-port) {
+    margin: 2rem 0;
+    padding: 2rem 0;
+  }
+
+  &__item {
+    flex: 0 0 50%;
+    margin-bottom: .7rem;
+
+    &::before {
+      content: '';
+      display: inline-block;
+      margin-right: .7rem;
+      height: 1rem;
+      width: 1rem;
+      background-image: url(../img/chevron-thin-right.svg);
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      @supports (-webkit-mask-image: url()) or (mask-image: url()) {
+        background-color: $pri;
+        mask-image: url(../img/chevron-thin-right.svg);
+        mask-size: cover;
+        -webkit-mask-image: url(../img/chevron-thin-right.svg);
+        -webkit-mask-size: cover;
+        background-image: none;
+      }
+
+    }
+  }
+}
+
+.recommend {
+  font-size: 1.3rem;
+  color: $greyDark3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__count {
+    margin-right: auto;
+  }
+
+  &__friends {
+    display: flex;
+  }
+
+  &__photo {
+    box-sizing: content-box;
+    height: 4rem;
+    width: 4rem;
+    border-radius: 100vh;
+    border: 3px solid $white;
+
+    &:not(:last-child) {
+      margin-right: -2rem;
+    }
+  }
+}

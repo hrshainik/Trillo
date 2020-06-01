@@ -1,0 +1,133 @@
+.header {
+  height: 7rem;
+  background-color: $white;
+  border-bottom: 1px solid $greyLight2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.4rem;
+
+  @include respond(sm-phone) {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 1rem 0;
+  }
+}
+
+.logo {
+  height: 3.25rem;
+  margin-left: 3rem;
+}
+
+.search {
+  flex: 0 0 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include respond(sm-phone) {
+    order: 1;
+    margin: auto;
+    margin-top: 1rem;
+    flex: 0 0 90%;
+  }
+
+  &__input {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background-color: $greyLight2;
+    border: none;
+    padding: .7rem 2rem;
+    border-radius: 100vh;
+    width: 90%;
+    transition: width 200ms ease;
+    margin-right: -3.25rem;
+
+    &:focus {
+      outline: none;
+      width: 100%;
+      background-color: $greyLight3;
+    }
+
+    &::placeholder {
+      font-weight: 100;
+      color: $greyLight4;
+    }
+  }
+
+  &__input:focus+&__btn {
+    background-color: transparent;
+  }
+
+  &__btn {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__icon {
+    height: 2rem;
+    width: 2rem;
+    fill: $greyDark3;
+  }
+}
+
+.user-nav {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+
+  &>* {
+    padding: 0 2rem;
+    height: 100%;
+    cursor: pointer;
+    transition: background-color 250ms ease;
+  }
+
+  &>*:hover {
+    background-color: $greyLight2;
+  }
+
+  &__icon-box {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  &__icon {
+    height: 2.25rem;
+    width: 2.25rem;
+    fill: $greyDark2;
+  }
+
+  &__notifications {
+    font-size: .8rem;
+    height: 1.7rem;
+    width: 1.7rem;
+    background-color: $pri;
+    color: $white;
+    border-radius: 100vh;
+    position: absolute;
+    top: 1.5rem;
+    right: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__user {
+    display: flex;
+    align-items: center;
+  }
+
+  &__user-photo {
+    height: 3.75rem;
+    border-radius: 100vh;
+    margin-right: 1rem;
+  }
+}

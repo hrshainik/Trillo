@@ -1,0 +1,20 @@
+@import "abstracts/variables";
+@import "abstracts/mixins";
+
+@import "base/base";
+@import "base/typography";
+@import "base/animation";
+
+@import "layouts/container";
+@import "layouts/header";
+@import "layouts/navigation";
+@import "layouts/grid";
+@import "layouts/details";
+
+@import "pages/hotel";
+
+@import "components/gallery";
+@import "components/overview";
+@import "components/btn";
+@import "components/review";
+@import "components/cta";

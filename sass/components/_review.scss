@@ -1,0 +1,68 @@
+.review {
+  background-color: $white;
+  box-shadow: $shadowLight1;
+  padding: 3rem;
+  margin-bottom: 3.5rem;
+  position: relative;
+  overflow: hidden;
+
+  @include respond(tab-port) {
+    padding: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  &:not(:last-of-type) {
+    @include respond(phone) {
+      margin-top: 3rem;
+    }
+  }
+
+  &__text {
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 10;
+  }
+
+  &__user {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__photo {
+    height: 4.5rem;
+    width: 4.5rem;
+    border-radius: 100vh;
+  }
+
+  &__user-box {
+    margin-right: auto;
+    margin-left: 1rem;
+  }
+
+  &__user-name {
+    font-weight: 600;
+    color: $greyDark2;
+  }
+
+  &__user-date {
+    font-size: 1.2rem;
+  }
+
+  &__rating {
+    align-self: center;
+    font-size: 2.2rem;
+    color: $pri;
+  }
+
+  &::before {
+    content: "\201C";
+    position: absolute;
+    top: -2.75rem;
+    left: -1rem;
+    font-size: 20rem;
+    line-height: 1;
+    color: $greyLight2;
+    font-family: sans-serif;
+    z-index: 1;
+  }
+}

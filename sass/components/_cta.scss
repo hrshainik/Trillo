@@ -1,0 +1,66 @@
+.cta {
+  padding: 3.5rem 0;
+  text-align: center;
+  background-color: $white;
+
+  @include respond(tab-port) {
+    padding: 2.5rem 0;
+  }
+
+  &__book-now {
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: 300;
+    margin-bottom: 2.5rem;
+  }
+}
+
+.btn {
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  border-radius: 100vh;
+  border: none;
+  background-image: linear-gradient(to right, $priLight, $priDark);
+  color: $white;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+
+  &>* {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+  }
+
+  &__visible {
+    padding: 2rem 7.5rem;
+    transform: translateY(0);
+    transition: transform 250ms ease-out;
+  }
+
+  &__invisible {
+    position: absolute;
+    left: 0;
+    top: -100%;
+    padding: 2rem 0;
+    transition: top 250ms ease-out;
+  }
+
+  &:hover {
+    background-image: linear-gradient(to left, $priLight, $priDark);
+  }
+
+  &:hover &__visible {
+    transform: translateY(100%);
+  }
+
+  &:hover &__invisible {
+    top: 0;
+  }
+
+  &:focus {
+    outline: none;
+    animation: pulsate 1s infinite;
+  }
+}
